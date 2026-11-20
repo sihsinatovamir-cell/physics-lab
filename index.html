@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Инженерная лаборатория: виртуальные опыты по механике и визуализатор численных методов. Работает офлайн, без сервера."
+    />
+    <title>Инженерная лаборатория</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>
+      // Тема применяется до первой отрисовки, чтобы не было «мигания» белым.
+      (function () {
+        try {
+          var saved = localStorage.getItem('ilab-theme');
+          var theme =
+            saved ||
+            (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          /* localStorage может быть недоступен — тогда просто светлая тема */
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-CU6fe9fz.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/katex-Da6hH60J.js">
+    <link rel="modulepreload" crossorigin href="./assets/docx-DVODdGPK.js">
+    <link rel="stylesheet" crossorigin href="./assets/katex-DMZ4qLFT.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-B9tpP6vK.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <noscript>Для работы «Инженерной лаборатории» нужен включённый JavaScript.</noscript>
+  </body>
+</html>
